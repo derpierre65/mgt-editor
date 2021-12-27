@@ -1,0 +1,7 @@
+# directories
+dist
+.idea
+node_modules
+
+# files
+deploy.php

@@ -203,13 +203,13 @@ export default {
 			}
 
 			let num = 0;
-			for (const j = 0; j < 8; j++) {
+			for (let j = 0; j < 8; j++) {
 				num += array[j];
 			}
 
 			num = 40 - num;
 			if (num > 0) {
-				for (const k = 0; k < 8; k++) {
+				for (let k = 0; k < 8; k++) {
 					if (num > 0 && array[k] < 10) {
 						array[k]++;
 						num--;
@@ -218,7 +218,7 @@ export default {
 			}
 
 			if (num < 0) {
-				for (const i = 0; i < 8; i++) {
+				for (let i = 0; i < 8; i++) {
 					if (num < 0 && array[i] > 0) {
 						array[i]--;
 						num++;

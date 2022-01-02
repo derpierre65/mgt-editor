@@ -28,7 +28,7 @@
 				</div>
 
 				<select v-model="topic" class="w-full border border-black">
-					<option v-for="topicIndex of mainTopic" :value="topicIndex">{{topics[topicIndex]['NAME EN']}}</option>
+					<option v-for="topic of mainTopic" :value="topic.key">{{topic.value}}</option>
 				</select>
 			</div>
 			<div class="w-64">
@@ -38,7 +38,7 @@
 
 				<select v-model="subTopic" class="w-full border border-black">
 					<option :value="-1">Nothing</option>
-					<option v-for="topicIndex of mainTopic" :value="topicIndex">{{topics[topicIndex]['NAME EN']}}</option>
+					<option v-for="topic of mainTopic" :value="topic.key">{{topic.value}}</option>
 				</select>
 			</div>
 		</div>
@@ -155,7 +155,19 @@ export default {
 			return genres[this.genre]['GENRE COMB'];
 		},
 		mainTopic() {
-			return genres[this.genre].themes;
+			const topics = [];
+			for (const topic of genres[this.genre].themes ) {
+				topics.push({
+					key: topic,
+					value: this.topics[topic]['NAME EN'],
+				})
+			}
+
+			topics.sort((a, b) => {
+				return a.value > b.value ? 1 : -1;
+			})
+
+			return topics;
 		},
 	},
 	methods: {

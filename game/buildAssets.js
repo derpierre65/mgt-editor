@@ -35,10 +35,16 @@ for ( const line of genreLines ) {
 	if ( !match ) {
 		continue;
 	}
+
 	if ( match.length === 3 ) {
 		if ( match[1] === 'GENRE COMB' ) {
 			match[2] = getList(match[2]);
 		}
+
+		if ( match[1].startsWith('FOCUS') || match[1].startsWith('ALIGN') ) {
+			match[2] = parseInt(match[2]);
+		}
+
 		genre[match[1]] = match[2];
 	}
 }
@@ -65,5 +71,6 @@ for ( const [key, line] of themeLinesGE.entries() ) {
 	}
 }
 
+fs.mkdirSync(__dirname + '/../src/data/');
 fs.writeFileSync(__dirname + '/../src/data/genres.json', JSON.stringify(genres));
 fs.writeFileSync(__dirname + '/../src/data/themes.json', JSON.stringify(themes));

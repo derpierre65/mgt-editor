@@ -4,4 +4,5 @@ dist
 node_modules
 
 # files
+src/data/*.json
 deploy.php

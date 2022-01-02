@@ -6,7 +6,7 @@
 					Main genre
 				</div>
 
-				<select v-model="genre" class="w-full border border-black">
+				<select v-model.number="genre" class="w-full border border-black">
 					<option v-for="gen of genres" :value="gen.ID">{{gen['NAME EN']}}</option>
 				</select>
 			</div>
@@ -15,7 +15,7 @@
 					Subgenre
 				</div>
 
-				<select v-model="subGenre" class="w-full border border-black">
+				<select v-model.number="subGenre" class="w-full border border-black">
 					<option :value="-1">Nothing</option>
 					<option v-for="gen of subGenres" :value="genres[gen].ID">{{genres[gen]['NAME EN']}}</option>
 				</select>
@@ -27,7 +27,7 @@
 					Main topic
 				</div>
 
-				<select v-model="topic" class="w-full border border-black">
+				<select v-model.number="topic" class="w-full border border-black">
 					<option v-for="topic of mainTopic" :value="topic.key">{{topic.value}}</option>
 				</select>
 			</div>
@@ -36,7 +36,7 @@
 					Subtopic
 				</div>
 
-				<select v-model="subTopic" class="w-full border border-black">
+				<select v-model.number="subTopic" class="w-full border border-black">
 					<option :value="-1">Nothing</option>
 					<option v-for="topic of mainTopic" :value="topic.key">{{topic.value}}</option>
 				</select>
@@ -156,23 +156,26 @@ export default {
 		},
 		mainTopic() {
 			const topics = [];
-			for (const topic of genres[this.genre].themes ) {
+			for (const topic of genres[this.genre].themes) {
 				topics.push({
 					key: topic,
 					value: this.topics[topic]['NAME EN'],
-				})
+				});
 			}
 
 			topics.sort((a, b) => {
 				return a.value > b.value ? 1 : -1;
-			})
+			});
 
 			return topics;
 		},
 	},
 	methods: {
 		generateGame() {
-			const align = [];
+			const align = {
+				[this.genre]: [],
+				[this.subGenre]: [],
+			};
 			const focus = {
 				[this.genre]: [],
 				[this.subGenre]: [],
@@ -186,11 +189,14 @@ export default {
 			}
 
 			for (let i = 0; i < 3; i++) {
-				align.push(genres[this.genre]['ALIGN' + i]);
+				align[this.genre].push(genres[this.genre]['ALIGN' + i]);
+				if (this.subGenre >= 0) {
+					align[this.subGenre].push(genres[this.subGenre]['ALIGN' + i]);
+				}
 			}
 
-			this.focus = this.getFocus(parseInt(this.genre), parseInt(this.subGenre), focus);
-			this.align = align;
+			this.focus = this.getFocus(this.genre, this.subGenre, focus);
+			this.align = this.getAlign(this.genre, this.subGenre, align);
 			this.priority = [
 				genres[this.genre].GAMEPLAY,
 				genres[this.genre].GRAPHIC,
@@ -198,16 +204,33 @@ export default {
 				genres[this.genre].CONTROL,
 			];
 		},
+		getAlign(mainGenre, subGenre, genreAlign) {
+			const array = Array(3).fill(0);
+
+			for (let i = 0; i < 3; i++) {
+				if (mainGenre !== -1) {
+					array[i] += genreAlign[mainGenre][i];
+				}
+				if (subGenre !== -1) {
+					array[i] += genreAlign[subGenre][i];
+					array[i] /= 2;
+				}
+
+				array[i] = Math.floor(array[i]);
+			}
+
+			return array;
+		},
 		getFocus(mainGenre, subGenre, genreFocus) {
 			const array = Array(8).fill(0);
 
 			for (let i = 0; i < 8; i++) {
-				if (mainGenre >= 0) {
-					array[i] += parseInt(genreFocus[mainGenre][i]);
+				if (mainGenre !== -1) {
+					array[i] += parseFloat(genreFocus[mainGenre][i]);
 				}
 
-				if (subGenre >= 0) {
-					array[i] += parseInt(genreFocus[subGenre][i]);
+				if (subGenre !== -1) {
+					array[i] += parseFloat(genreFocus[subGenre][i]);
 					array[i] /= 2;
 				}
 

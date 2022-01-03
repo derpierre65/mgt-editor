@@ -7,6 +7,7 @@
 				</div>
 
 				<select v-model.number="genre" class="w-full border border-black">
+					<option :value="-1" />
 					<option v-for="gen of genres" :value="gen.ID">{{gen['NAME EN']}}</option>
 				</select>
 			</div>
@@ -43,10 +44,18 @@
 			</div>
 		</div>
 
-		<div class="w-full text-center mt-8">
-			<button @click="generateGame" class="bg-white p-2 px-4">
-				Generate
-			</button>
+		<div class="w-1/2 mx-auto mt-4" v-if="genre !== -1">
+			<div class="flex gap-4">
+				<div class="bg-gray-500 text-white p-2 w-1/2">{{genres[genre]['NAME EN']}}</div>
+				<div v-if="subGenre !== -1" class="bg-gray-500 text-white p-2 w-1/2">{{genres[subGenre]['NAME EN']}}</div>
+			</div>
+
+			<div class="bg-blue-300 p-0.5 pl-1 mt-2">
+				Possible Target Group
+			</div>
+			<div class="flex gap-2">
+				<div class="bg-gray-500 p-2 text-white" v-for="value of genres[genre].TGROUP">{{value.substr(0,1) + value.substr(1).toLowerCase()}}</div>
+			</div>
 		</div>
 
 		<div class="w-1/2 mx-auto mt-4" v-if="focus">
@@ -141,7 +150,7 @@ export default {
 		return {
 			genres,
 			topics,
-			genre: 0,
+			genre: -1,
 			subGenre: -1,
 			topic: 0,
 			subTopic: -1,
@@ -150,11 +159,27 @@ export default {
 			priority: [],
 		};
 	},
+	watch: {
+		genre() {
+			this.generateGame();
+		},
+		subGenre() {
+			this.generateGame();
+		},
+	},
 	computed: {
 		subGenres() {
+			if (this.genre === -1) {
+				return [];
+			}
+
 			return genres[this.genre]['GENRE COMB'];
 		},
 		mainTopic() {
+			if (this.genre === -1) {
+				return [];
+			}
+
 			const topics = [];
 			for (const topic of genres[this.genre].themes) {
 				topics.push({

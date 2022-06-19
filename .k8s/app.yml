@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mgt-editor
+spec:
+  revisionHistoryLimit: 1
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  selector:
+    matchLabels:
+      app: mgt-editor
+  template:
+    metadata:
+      labels:
+        app: mgt-editor
+        commit_hash: "CICD_GIT_COMMIT"
+    spec:
+      imagePullSecrets:
+        - name: registry-docker-hub
+      containers:
+        - name: mgt-editor
+          image: derpierre65/mgt-editor:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          startupProbe:
+            periodSeconds: 2
+            failureThreshold: 20
+            successThreshold: 1
+            timeoutSeconds: 1
+            httpGet:
+              scheme: HTTP
+              path: /
+              port: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mgt-editor
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: mgt-editor
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mgt-editor
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+spec:
+  tls:
+    - hosts:
+        - mgt-editor.derpierre65.dev
+      secretName: tls-mgt-editor
+  rules:
+    - host: mgt-editor.derpierre65.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mgt-editor
+                port:
+                  number: 80

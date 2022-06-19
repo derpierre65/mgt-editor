@@ -1,0 +1,15 @@
+tests/
+node_modules/
+auth.json
+.editorconfig
+.env
+.env.example
+.gitattributes
+.gitignore
+.styleci.yml
+tailwind.config.js
+webpack.mix.js
+phpunit.xml
+deploy.php
+README.md
+CHANGELOG.md

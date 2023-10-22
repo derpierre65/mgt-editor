@@ -3,8 +3,10 @@ const fs = require('fs');
 const genreLines = fs.readFileSync(__dirname + '/data/Genres.txt').toString().split('\n');
 const themeLinesGE = fs.readFileSync(__dirname + '/data/Themes_GE.txt').toString().split('\n');
 const themeLinesEN = fs.readFileSync(__dirname + '/data/Themes_EN.txt').toString().split('\n');
+const combinationLines = fs.readFileSync(__dirname + '/genreCombination.txt').toString().split('\n');
 const genres = {};
 const themes = [];
+const combinations = {};
 
 function getList(list) {
 	const array = [];
@@ -57,7 +59,6 @@ for (const [key, line] of themeLinesGE.entries()) {
 
 	for (let genre of getList(match[2])) {
 		if (!genres[genre]) {
-			console.log(genre);
 			continue;
 		}
 
@@ -69,6 +70,19 @@ for (const [key, line] of themeLinesGE.entries()) {
 	}
 }
 
+for ( const line of combinationLines ) {
+	const [[genre, subgenre], [type, ...values]] = line.split('=').map((value) => value.split(','));
+
+	if ( typeof combinations[genre] === 'undefined') {
+		combinations[genre] = {};
+	}
+	if ( typeof combinations[genre][subgenre] === 'undefined') {
+		combinations[genre][subgenre] = {};
+	}
+
+	combinations[genre][subgenre][type] = values;
+}
+
 let dataDirectory = __dirname + '/../src/data/';
 if (!fs.existsSync(dataDirectory)) {
 	fs.mkdirSync(dataDirectory);
@@ -76,3 +90,4 @@ if (!fs.existsSync(dataDirectory)) {
 
 fs.writeFileSync(__dirname + '/../src/data/genres.json', JSON.stringify(genres));
 fs.writeFileSync(__dirname + '/../src/data/themes.json', JSON.stringify(themes));
+fs.writeFileSync(__dirname + '/../src/data/combinations.json', JSON.stringify(combinations));

@@ -143,6 +143,7 @@
 <script>
 import genres from './data/genres.json';
 import topics from './data/themes.json';
+import combinations from './data/combinations.json';
 
 export default {
 	name: 'App',
@@ -197,31 +198,8 @@ export default {
 	},
 	methods: {
 		generateGame() {
-			const align = {
-				[this.genre]: [],
-				[this.subGenre]: [],
-			};
-			const focus = {
-				[this.genre]: [],
-				[this.subGenre]: [],
-			};
-
-			for (let i = 0; i < 8; i++) {
-				focus[this.genre].push(genres[this.genre]['FOCUS' + i]);
-				if (this.subGenre >= 0) {
-					focus[this.subGenre].push(genres[this.subGenre]['FOCUS' + i]);
-				}
-			}
-
-			for (let i = 0; i < 3; i++) {
-				align[this.genre].push(genres[this.genre]['ALIGN' + i]);
-				if (this.subGenre >= 0) {
-					align[this.subGenre].push(genres[this.subGenre]['ALIGN' + i]);
-				}
-			}
-
-			this.focus = this.getFocus(this.genre, this.subGenre, focus);
-			this.align = this.getAlign(this.genre, this.subGenre, align);
+			this.focus = this.getFocus(this.genre, this.subGenre);
+			this.align = this.getAlign(this.genre, this.subGenre);
 			this.priority = [
 				genres[this.genre].GAMEPLAY,
 				genres[this.genre].GRAPHIC,
@@ -229,64 +207,11 @@ export default {
 				genres[this.genre].CONTROL,
 			];
 		},
-		getAlign(mainGenre, subGenre, genreAlign) {
-			const array = Array(3).fill(0);
-
-			for (let i = 0; i < 3; i++) {
-				if (mainGenre !== -1) {
-					array[i] += genreAlign[mainGenre][i];
-				}
-				if (subGenre !== -1) {
-					array[i] += genreAlign[subGenre][i];
-					array[i] /= 2;
-				}
-
-				array[i] = Math.floor(array[i]);
-			}
-
-			return array;
+		getAlign(mainGenre, subGenre) {
+      return combinations[mainGenre][subGenre].align;
 		},
-		getFocus(mainGenre, subGenre, genreFocus) {
-			const array = Array(8).fill(0);
-
-			for (let i = 0; i < 8; i++) {
-				if (mainGenre !== -1) {
-					array[i] += parseFloat(genreFocus[mainGenre][i]);
-				}
-
-				if (subGenre !== -1) {
-					array[i] += parseFloat(genreFocus[subGenre][i]);
-					array[i] /= 2;
-				}
-
-				array[i] = Math.floor(array[i]);
-			}
-
-			let num = 0;
-			for (let j = 0; j < 8; j++) {
-				num += array[j];
-			}
-
-			num = 40 - num;
-			if (num > 0) {
-				for (let k = 0; k < 8; k++) {
-					if (num > 0 && array[k] < 10) {
-						array[k]++;
-						num--;
-					}
-				}
-			}
-
-			if (num < 0) {
-				for (let i = 0; i < 8; i++) {
-					if (num < 0 && array[i] > 0) {
-						array[i]--;
-						num++;
-					}
-				}
-			}
-
-			return array;
+		getFocus(mainGenre, subGenre) {
+      return combinations[mainGenre][subGenre].focus;
 		},
 	},
 };

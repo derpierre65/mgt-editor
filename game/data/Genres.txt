@@ -1,4 +1,42 @@
-﻿[ID]0
+﻿////							 				GENRES 									  	  		  ////
+// Parameters:                                                                              	  		//
+//                                                                         					      		//
+// [ID]int 							= The ID of the object.                                   			//
+// [NAME (LANG)]string 				= The name of the genre in the respective language.    	  			//
+// [DESC (LANG)]string 				= The description of the genre in the respective language. 			//
+// [DATE](MONTH) (YEAR) 			= The date when the genre is available.     						//
+// [RES POINTS]int					= Required research points.                 						//
+// [PRICE]int						= How much the genre costs.                 				  		//
+// [DEV COSTS]int					= The development costs of the genre.       				  		//
+// [SUC YEAR]bool					= Uses the current year as sequel number.							//
+//									  (e. g. 'Football Manager 98' in 1998)								//
+// [PIC]string						= The filename of the image to be used as an icon.		  			//
+// [TGROUP]<tg1><tg2>...			= A list of appropriate target groups for the genre.				//
+// 									  <KID> = Children													//
+//									  <TEEN> = Teenagers												//
+//									  <ADULT> = Adults													//
+//									  <OLD> = Seniors													//
+//									  <ALL> = All														//
+// [GAMEPLAY]int					= Optimal setting for gameplay priority.                   	  	    //
+// [GRAPHICS]int					= Optimal setting for graphics priority.                        	//
+// [SOUND]int						= Optimal setting for sound priority.                           	//
+// [TECH]int						= Optimal setting for tech priority.                    		  	//
+// [GENRE COMB]<genre1><genre2>...	= A list of suitable genres.										//
+// [FOCUS(0-7)](0-10)				= Optimal settings for design focus.								//
+// [ALIGN(0-2)](0-10)				= Optimal settings for design direction.							//
+// [P_PC]int(0-100)					= Suitability for personal computer									//
+// [P_CONSOLE]int(0-100)			= Suitability for game consoles										//
+// [P_HANDHELD]int(0-100)			= Suitability for handhelds											//
+// [P_PHONE]int(0-100)				= Suitability for cell phones										//
+// [P_ARCADE]int(0-100)				= Suitability for arcade machines									//
+//                                                                                                      //
+//                                                                                                      //
+// NOTE: The screenshots for the genres must be added in the folder 'External/Screenshots/<Genre ID>'.  //
+//		 At least 3 screenshots of 320x240 size should be in the folder.                                //
+//                                                                                    			  		//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[ID]0
 [NAME EN]Skill Game
 [NAME GE]Geschicklichkeit
 [NAME CH]技巧
@@ -29,6 +67,12 @@
 [DESC AR].ﺔﻌﻳﺮﺳ لﺎﻌﻓﺃ دﻭﺩﺭ تﺎﺒﺛﺇ ﺐﻋﻼﻟﺍ ﻰﻠﻋ ﻦﻴﻌﺘﻳ<br>.سﺃﺮﻟﺍ مﺍﺪﺨﺘﺳﺎﺑ ﺎًﻀﻳﺃ ﻦﻜﻟﻭ ،ﻢﻜﺤﺘﻟﺍ ﺎﺼﻋ مﺍﺪﺨﺘﺳﺎﺑ ﻂﻘﻓ ﺲﻴﻟ
 [NAME JA]シンプルゲーム
 [DESC JA]プレイヤーに素早い反応が求められるゲームです。<br>ジョイスティックだけでなく、頭も使って。
+[NAME UA]Скіл
+[DESC UA]Гравцеві потрібно швидко реагувати<br>не тільки джойстиком, а й розумом.
+[NAME TH]เกมวัดทักษะ
+[DESC TH]ผู้เล่นจะต้องคิดเร็วทำเร็ว<br>ซึ่งไม่ได้ใช้แค่จอยสติ๊ก แต่ต้องใช้สมองด้วย
+[NAME RU]Скилл
+[DESC RU]Игроку предстоит продемонстрировать быструю реакцию.<br>Не только джойстиком, но и головой.
 [DATE]JAN 1976
 [RES POINTS]50
 [PRICE]30000
@@ -51,6 +95,11 @@
 [ALIGN0]7
 [ALIGN1]1
 [ALIGN2]7
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]100
 
 [ID]1
 [NAME EN]Puzzle Game
@@ -74,7 +123,7 @@
 [NAME CZ]Logická hra
 [DESC CZ]Hráči, kteří chtějí řešit složité hádanky a nemají rádi akci, jsou v tomto žánru v dobrých rukou.
 [NAME KO]퍼즐 게임
-[DESC KO]Players who want to solve challenging puzzles<br>and don't like action are in good hands with this genre.
+[DESC KO]도전적인 퍼즐을 풀고 싶어하고<br>액션을 좋아하지 않는 플레이어들은 이 장르와 잘 어울린다.
 [NAME TU]Bulmaca
 [DESC TU]Zorlu bulmacaları çözmek isteyen<br> ve aksiyondan hoşlanmayan oyuncular bu türle emin ellerdedir.
 [NAME IT]Giochi di Enigmi
@@ -83,6 +132,12 @@
 [DESC AR]ﺔﺒﻌﺼﻟﺍ زﺎﻐﻟﻷﺍ ﻞﺣ ﻲﻓ نﻮﺒﻏﺮﻳ ﻦﻳﺬﻟﺍ نﻮﺒﻋﻼﻟﺍ<br>.عﻮﻨﻟﺍ اﺬﻫ ﻊﻣ ﺔﻨﻴﻣﺃ ﺪﻳﺃ ﻲﻓ ﻞﻤﻌﻟﺍ نﻮﺒﺤﻳ ﻻﻭ
 [NAME JA]パズルゲーム
 [DESC JA]やりがいのあるパズルを解きたい人と、アクションが苦手な人は、<br>このジャンルに向いています。
+[NAME UA]Головоломка
+[DESC UA]Цей жанр сподобається гравцям, які хочуть<br>розгадувати складні головоломки і не люблять екшн.
+[NAME TH]เกมปริศนา
+[DESC TH]ผู้เล่นที่ต้องการไขปริศนาสุดท้าทาย<br>และไม่ได้อยากบู้ล้างผลาญจะเหมาะกับเกมแนวนี้
+[NAME RU]Головоломка
+[DESC RU]Игроки, которые хотят решать сложные головоломки<br>и не любят экшн, находятся в надежных руках с этим жанром.
 [DATE]JAN 1976
 [RES POINTS]50
 [PRICE]30000
@@ -93,7 +148,7 @@
 [GRAPHIC]10
 [SOUND]10
 [CONTROL]30
-[GENRE COMB]<0><6><12><15>
+[GENRE COMB]<0><4><6><12><15>
 [FOCUS0]7
 [FOCUS1]2
 [FOCUS2]7
@@ -105,6 +160,11 @@
 [ALIGN0]8
 [ALIGN1]0
 [ALIGN2]8
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]80
 
 [ID]2
 [NAME EN]Adventure
@@ -114,7 +174,7 @@
 [DESC EN]Solving logical puzzles, no excessive violence<br>and a narrative gameplay characterize this genre.
 [DESC GE]Lösen von logischen Rätseln, keine übertriebene Gewalt und<br>ein erzählerisches Gameplay zeichnen dieses Genre aus.
 [DESC CH]解决逻辑难题，没有过度的暴力<br>和叙事性的玩法是这一类型的特点.
-[DESC FR]Gestion des personnages, résolution d'énigmes, combat de monstres.<br>Ce genre combine de nombreux éléments de gameplay d'autres genres.
+[DESC FR]Résoudre des énigmes logiques, pas de violence excessive<br>et un gameplay narratif caractérisent ce genre.
 [NAME PB]Aventura
 [DESC PB]Resolver quebra-cabeças lógicos, sem violência excessiva<br>e uma jogabilidade narrativa caracterizam este gênero.
 [NAME HU]Kaland
@@ -128,7 +188,7 @@
 [NAME CZ]Adventura
 [DESC CZ]Řešení logických hádanek, žádné přehnané násilí,<br>žánr zaměřen pouze na příběh.
 [NAME KO]어드벤처
-[DESC KO]Solving logical puzzles, no excessive violence<br>and a narrative gameplay characterize this genre.
+[DESC KO]논리적 퍼즐을 푸는 것, 과도한 폭력이 없는 것,<br>서사적 게임플레이가 이 장르의 특징이다.
 [NAME TU]Macera
 [DESC TU]Mantıksal bulmacaları çözmek, aşırı şiddet yok<br> ve anlatımlı bir oyun bu türü karakterize ediyor.
 [NAME IT]Avventura
@@ -137,6 +197,12 @@
 [DESC AR]طﺮﻔﻣ ﻒﻨﻋ ﻻ ،ﺔﻴﻘﻄﻨﻤﻟﺍ زﺎﻐﻟﻷﺍ ﻞﺣ<br>.عﻮﻨﻟﺍ اﺬﻫ ﺰﻴﻤﻳ يﺩﺮﺴﻟﺍ ﺐﻌﻠﻟﺍﻭ
 [NAME JA]アドベンチャー
 [DESC JA]論理的な謎解き、過度の暴力は無い、物語性を楽しむ、<br>以上がこのジャンルの特徴です。
+[NAME UA]Пригоди
+[DESC UA]Цей жанр характеризують: розв’язування логічних головоломок,<br>відсутність надмірного насильства та наративний ігролад.
+[NAME TH]เกมผจญภัย
+[DESC TH]การใช้ตรรกะไขปริศนา, ไม่มีความรุนแรงมากเกินไป<br>และเกมเพลย์ที่บอกเล่าเรื่องราวจะเป็นลักษณะเฉพาะของเกมแนวนี้
+[NAME RU]Приключение
+[DESC RU]Решение логических головоломок, отсутствие чрезмерного насилия<br>и сюжетный игровой процесс характеризуют этот жанр.
 [DATE]JAN 1976
 [RES POINTS]50
 [PRICE]30000
@@ -159,6 +225,11 @@
 [ALIGN0]5
 [ALIGN1]5
 [ALIGN2]7
+[P_PC]100
+[P_CONSOLE]90
+[P_HANDHELD]70
+[P_PHONE]60
+[P_ARCADE]30
 
 [ID]3
 [NAME EN]Role-Playing Game
@@ -166,7 +237,7 @@
 [NAME CH]角色扮演
 [NAME FR]Jeu de Rôle
 [DESC EN]Character management, solving puzzles, fighting monsters.<br>This genre combines many gameplay elements of other genres.
-[DESC GE]Charaktermanagement, Lösen von Rätseln, Kämpfe gegen Monster.<br>Viele Tätigkeiten übernimmt der Spieler ohne<br>großes Reaktionsvermögen besitzen zu müssen.
+[DESC GE]Charaktermanagement, Lösen von Rätseln, Kämpfe gegen Monster.<br>Viele Tätigkeiten übernimmt der Spieler, ohne<br>großes Reaktionsvermögen besitzen zu müssen.
 [DESC CH]角色管理、完成任务，打怪升级.<br>角色扮演类的游戏结合了很多其他类型的游戏元素.
 [DESC FR]Gestion des personnages, résolution d'énigmes, combat de monstres.<br>Ce genre combine de nombreux éléments de gameplay d'autres genres.
 [NAME PB]RPG
@@ -182,7 +253,7 @@
 [NAME CZ]RPG
 [DESC CZ]Správa postav, řešení hádanek, boj s příšerami.<br>Tento žánr kombinuje mnoho herních prvků z jiných žánrů.
 [NAME KO]롤플레잉 게임
-[DESC KO]Character management, solving puzzles, fighting monsters.<br>This genre combines many gameplay elements of other genres.
+[DESC KO]캐릭터 관리, 퍼즐 풀기, 몬스터 퇴치.<br>이 장르는 다른 장르의 많은 게임플레이 요소를 결합한다.
 [NAME TU]Rol Yapma
 [DESC TU]Karakter yönetimi, bulmaca çözme, canavarlarla savaşma.<br> Bu tür, diğer türlerin birçok oynanış unsurunu birleştirir.
 [NAME IT]Gioco di Ruolo
@@ -191,6 +262,12 @@
 [DESC AR].شﻮﺣﻮﻟﺍ ﺔﺑﺭﺎﺤﻣ ،زﺎﻐﻟﻷﺍ ﻞﺣ ،ﺔﻴﺼﺨﺸﻟﺍ ةﺭﺍﺩﺇ<br>.ىﺮﺧﻷﺍ عﺍﻮﻧﻷﺍ ﻦﻣ ﺐﻌﻠﻟﺍ ﺮﺻﺎﻨﻋ ﻦﻣ ﺪﻳﺪﻌﻟﺍ ﻦﻴﺑ عﻮﻨﻟﺍ اﺬﻫ ﻊﻤﺠﻳ
 [NAME JA]ロールプレイングゲーム
 [DESC JA]キャラクター管理、謎解き、魔物との戦い。<br>このジャンルは、他ジャンルから多くのゲーム性を組み合わせたものです。
+[NAME UA]Рольова гра
+[DESC UA]Цей жанр поєднує багато елементів ігрового процесу різних жанрів.<br>Прокачка персонажів, розгадування головоломок, боротьба з монстрами.
+[NAME TH]เกมสวมบทบาท
+[DESC TH]การจัดการตัวละคร, การไขปริศนา, การต่อสู้กับเหล่ามอนสเตอร์<br>เกมแนวนี้จะผสมผสานองค์ประกอบหลายอย่างจากเกมแนวอื่นเข้าด้วยกัน
+[NAME RU]Ролевая игра
+[DESC RU]Управление персонажами, решение головоломок, борьба с монстрами.<br>Этот жанр сочетает в себе множество игровых элементов других жанров.
 [DATE]MAY 1977
 [RES POINTS]300
 [PRICE]30000
@@ -201,7 +278,7 @@
 [GRAPHIC]30
 [SOUND]15
 [CONTROL]15
-[GENRE COMB]<1><2><5><6><13><14><16>
+[GENRE COMB]<1><2><4><5><6><13><14><16><18>
 [FOCUS0]8
 [FOCUS1]5
 [FOCUS2]0
@@ -213,6 +290,11 @@
 [ALIGN0]2
 [ALIGN1]6
 [ALIGN2]7
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]40
 
 [ID]4
 [NAME EN]Strategy
@@ -236,7 +318,7 @@
 [NAME CZ]Strategie
 [DESC CZ]Tento žánr vyžaduje taktické myšlení proti inteligentním protivníkům.<br>Hráči nemusí být profesionálové při používání joysticku,<br>naopak musí dokázat svou inteligenci.
 [NAME KO]전략
-[DESC KO]This genre requires tactical action against intelligent opponents.<br>The players do not have to be professionals in the use of the joystick,<br>but must demonstrate intelligence.
+[DESC KO]이 장르는 지능적인 상대에 대한 전술적 행동을 요구한다.<br>플레이어들은 조이스틱을 사용하는 데 전문가일 필요는 없지만,<br>자신의 지능을 입증해야 한다.
 [NAME TU]Strateji
 [DESC TU]Bu tür, zeki rakiplere karşı taktiksel eylem gerektirir.<br> Oyuncuların joystick kullanımında profesyonel olmaları gerekmez,<br> ancak akıl gerekir.
 [NAME IT]Strategia
@@ -245,6 +327,12 @@
 [DESC AR].ءﺎﻴﻛﺫﻷﺍ ﻦﻴﺿﺭﺎﻌﻤﻟﺍ ﺪﺿ ﺎًﻴﻜﻴﺘﻜﺗ ًﻼﻤﻋ عﻮﻨﻟﺍ اﺬﻫ ﺐﻠﻄﺘﻳ<br>،ﻢﻜﺤﺘﻟﺍ ﺎﺼﻋ مﺍﺪﺨﺘﺳﺍ ﻲﻓ ﻦﻴﻓﺮﺘﺤﻣ اﻮﻧﻮﻜﻳ نﺃ ﻦﻴﺒﻋﻼﻟﺍ ﻰﻠﻋ ﻦﻴﻌﺘﻳ ﻻ<br>.ءﺎﻛﺬﻟﺍ ﺮﻬﻈﻳ نﺃ ﺐﺠﻳ ﻦﻜﻟﻭ
 [NAME JA]戦略シミュレーション
 [DESC JA]このジャンルでは、知的な敵に対する戦術的行動が必要です。<br>ジョイスティック操作の素早さは求められませんが、<br>知性を振り絞る必要があります。
+[NAME UA]Стратегія
+[DESC UA]Цей жанр вимагає тактичних дій проти розумних супротивників.<br>Гравці не повинні бути професіоналами з використання джойстика,<br>але повинні продемонструвати інтелект.
+[NAME TH]เกมกลยุทธ์
+[DESC TH]เกมแนวนี้ต้องใช้การดำเนินการทางยุทธวิธีเพื่อต่อสู้กับฝ่ายตรงข้ามที่ชาญฉลาด<br>ผู้เล่นไม่จำเป็นต้องช่ำชองในการใช้จอยสติ๊ก<br>แต่ต้องแสดงกึ๋นออกมา
+[NAME RU]Стратегия
+[DESC RU]Этот жанр требует тактических действий против умных противников.<br>Игрокам не обязательно быть профессионалами в использовании джойстика,<br>они должны демонстрировать интеллект.
 [DATE]JUL 1978
 [RES POINTS]400
 [PRICE]35000
@@ -255,7 +343,7 @@
 [GRAPHIC]10
 [SOUND]10
 [CONTROL]30
-[GENRE COMB]<3><5><9><11><13>
+[GENRE COMB]<3><5><9><11><13><18>
 [FOCUS0]8
 [FOCUS1]10
 [FOCUS2]0
@@ -267,6 +355,11 @@
 [ALIGN0]0
 [ALIGN1]6
 [ALIGN2]8
+[P_PC]100
+[P_CONSOLE]80
+[P_HANDHELD]80
+[P_PHONE]80
+[P_ARCADE]30
 
 [ID]5
 [NAME EN]Action
@@ -290,7 +383,7 @@
 [NAME CZ]Akční
 [DESC CZ]Eliminace nepřátel je jádrem tohoto žánru.<br>Fanoušci jsou spokojeni s jednoduchou hratelností, ale vyžadují skvělou grafiku a bombastické zvuky.
 [NAME KO]액션
-[DESC KO]Eliminating enemies is the core of this genre.<br> Fans are satisfied with a simple gameplay, but demand great graphics and bombastic sounds.
+[DESC KO]적들을 제거하는 것이 이 장르의 핵심이다.<br>팬들은 간단한 게임플레이에 만족하지만 훌륭한 그래픽과 멋진 사운드를 요구한다.
 [NAME TU]Aksiyon
 [DESC TU]Düşmanları ortadan kaldırmak bu türün özüdür. Hayranlar basit bir oyundan memnunlar, ancak harika grafikler ve gösterişli sesler talep ediyor.
 [NAME IT]Azione
@@ -299,6 +392,12 @@
 [DESC AR].عﻮﻨﻟﺍ اﺬﻫ ﺮﻫﻮﺟ ﻮﻫ ءاﺪﻋﻷﺍ ﻰﻠﻋ ءﺎﻀﻘﻟﺍ<br> .ﺔﻠﻫﺬﻣ ﺎًﺗﺍﻮﺻﺃﻭ ﺔﻌﺋﺍﺭ تﺎﻣﻮﺳﺭ نﻮﺒﻠﻄﻳ ﻢﻬﻨﻜﻟ ، ﺔﻄﻴﺴﺒﻟﺍ ﺐﻌﻠﻟﺍ ﺔﻘﻳﺮﻃ ﻦﻋ نﻮﺿﺮﻳ نﻮﻌﺠﺸﻤﻟﺍ
 [NAME JA]アクション
 [DESC JA]敵を排除することがこのジャンルの中核です。<br>ファンはシンプルなゲームプレイに満足していますが、美麗グラフィックと壮大な音声も求めています。
+[NAME UA]Екшн
+[DESC UA]Знищення ворогів є основою цього жанру.<br>Фани задовольняються простим ігроладом, але вимагають чудової графіки та приголомшливих звуків.
+[NAME TH]เกมแอคชัน
+[DESC TH]การกำจัดศัตรูคือแก่นแท้ของเกมแนวนี้<br>แฟนเกมจะพึงพอใจกับรูปแบบการเล่นที่เรียบง่าย<br>แต่ก็ต้องการกราฟิกที่ดีเยี่ยมและเสียงประกอบที่อลังการ
+[NAME RU]Экшн
+[DESC RU]Уничтожение врагов - основа этого жанра.<br> Поклонники довольны простым игровым процессом, но требуют великолепной графики и мощного звука.
 [DATE]AUG 1979
 [RES POINTS]500
 [PRICE]40000
@@ -309,7 +408,7 @@
 [GRAPHIC]40
 [SOUND]30
 [CONTROL]20
-[GENRE COMB]<0><2><3><6><10><14><16>
+[GENRE COMB]<0><2><3><6><10><14><16><18>
 [FOCUS0]3
 [FOCUS1]2
 [FOCUS2]7
@@ -321,6 +420,11 @@
 [ALIGN0]5
 [ALIGN1]7
 [ALIGN2]9
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]100
 
 [ID]6
 [NAME EN]Platformer
@@ -328,7 +432,7 @@
 [NAME CH]横版
 [NAME FR]Platforme
 [DESC EN]Main features of this genre are running & jumping.<br>Small puzzles and action sequences are also welcome.
-[DESC GE]Hauptmerkmale dieses Genre sind Laufen & Springen.<br>Kleine Rätsel und Actions-Sequenzen werden auch gern gesehen.
+[DESC GE]Hauptmerkmale dieses Genre sind Laufen & Springen.<br>Kleine Rätsel und Action-Sequenzen werden auch gern gesehen.
 [DESC CH]这种类型游戏的主要特点是奔跑和跳跃.<br>同样也喜欢解谜题和拼图.
 [DESC FR]Les principales caractéristiques de ce genre sont la course et le saut.<br>Les petits puzzles et séquences d'action sont également les bienvenus.
 [NAME PB]Plataforma
@@ -344,7 +448,7 @@
 [NAME CZ]Plošinovka
 [DESC CZ]Hlavními rysy tohoto žánru jsou běh a skákání.<br>Menší hádanky a akční sekvence jsou také vítány.
 [NAME KO]플랫포머 게임
-[DESC KO]Main features of this genre are running & jumping.<br>Small puzzles and action sequences are also welcome.
+[DESC KO]이 장르의 주요 특징은 달리기와 점프이다.<br>작은 퍼즐과 액션 시퀀스도 환영받는다.
 [NAME TU]Platform
 [DESC TU]Bu türün temel özellikleri koşma ve zıplamadır.<br> Küçük bulmacalar ve aksiyon sekansları da hoş karşılanır.
 [NAME IT]Platform
@@ -353,6 +457,12 @@
 [DESC AR].ﺰﻔﻘﻟﺍﻭ يﺮﺠﻟﺍ ﻲﻫ عﻮﻨﻟﺍ اﺬﻬﻟ ﺔﻴﺴﻴﺋﺮﻟﺍ تﺍﺰﻴﻤﻟﺍ<br>.ﺔﻛﺮﺤﻟﺍ تﻼﺴﻠﺴﺗﻭ ةﺮﻴﻐﺼﻟﺍ زﺎﻐﻟﻷﺎﺑ ﺎًﻀﻳﺃ ﺐﺣﺮﻧ
 [NAME JA]プラットフォーマー
 [DESC JA]このジャンルの主な特徴は、走りとジャンプです。<br>連続アクションやちょっとしたパズルも歓迎されるでしょう。
+[NAME UA]Платформер
+[DESC UA]Основні особливості цього жанру — біг і стрибки.<br>Також вітаються невеликі головоломки та послідовності дій.
+[NAME TH]เกมแพล็ตฟอร์ม
+[DESC TH]ฟีเจอร์หลักของเกมแนวนี้คือการวิ่งและการกระโดด<br>ปริศนากับฉากแอคชันเล็ก ๆ น้อย ๆ  ก็ยินดีให้มีในเกมเช่นกัน
+[NAME RU]Платформер
+[DESC RU]Основные черты этого жанра - бег и прыжки.<br>Также приветствуются небольшие головоломки и последовательности действий.
 [DATE]OCT 1980
 [RES POINTS]600
 [PRICE]50000
@@ -375,6 +485,11 @@
 [ALIGN0]8
 [ALIGN1]3
 [ALIGN2]5
+[P_PC]90
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]100
 
 [ID]7
 [NAME EN]Simulation
@@ -398,7 +513,7 @@
 [NAME CZ]Simulace
 [DESC CZ]V tomto žánru je nutný vysoký realismus a průkopnická grafika.<br>Fanoušci jsou navíc potěšeni strategickými herními prvky.
 [NAME KO]시뮬레이션 게임
-[DESC KO]High realism and groundbreaking graphics are necessary in this genre.<br>In addition, fans are pleased with strategic gameplay elements.
+[DESC KO]이 장르에서는 높은 리얼리즘과 획기적인 그래픽이 필요하다.<br>그리고, 팬들은 전략적인 게임플레이 요소에 만족한다.
 [NAME TU]Simülasyon
 [DESC TU]Bu türde yüksek gerçekçilik ve çığır açan grafikler gereklidir.<br> Ayrıca, hayranlar stratejik oynanış öğelerinden memnunlar.
 [NAME IT]Simulazione
@@ -407,6 +522,12 @@
 [DESC AR].عﻮﻨﻟﺍ اﺬﻫ ﻲﻓ ﺔﻳﺭﻭﺮﺿ ةﺪﺋﺍﺮﻟﺍ تﺎﻣﻮﺳﺮﻟﺍﻭ ﺔﻴﻟﺎﻌﻟﺍ ﺔﻴﻌﻗﺍﻮﻟﺍ<br>.ﺔﻴﺠﻴﺗﺍﺮﺘﺳﻹﺍ ﺐﻌﻠﻟﺍ ﺮﺻﺎﻨﻌﺑ نﻮﻌﺠﺸﻤﻟﺍ ﺪﻌﺴﻳ ، ﻚﻟﺫ ﻰﻟﺇ ﺔﻓﺎﺿﻹﺎﺑ
 [NAME JA]シミュレーション
 [DESC JA]このジャンルでは、リアルで画期的なグラフィックが必要です。<br>更に、ファンは戦略的なプレイ要素にも満足します。
+[NAME UA]Симулятор
+[DESC UA]У цьому жанрі необхідні реалізм і першокласна графіка.<br>Крім того, фанів приваблюють стратегічні елементи ігроладу.
+[NAME TH]เกมจำลองสถานการณ์
+[DESC TH]ความสมจริงสูงกับกราฟิกที่ก้าวล้ำจะเป็นส่วนสำคัญในเกมแนวนี้<br>นอกจากนั้นแล้ว แฟนเกมยังชื่นชอบองค์ประกอบเกมเพลย์เชิงกลยุทธ์อีกด้วย
+[NAME RU]Симулятор
+[DESC RU]В этом жанре необходим высокий реализм и новаторская графика.<br>Кроме того, фанатов радуют элементы стратегического геймплея.
 [DATE]DEC 1981
 [RES POINTS]700
 [PRICE]60000
@@ -417,7 +538,7 @@
 [GRAPHIC]40
 [SOUND]20
 [CONTROL]30
-[GENRE COMB]<4><5><8><14><17>
+[GENRE COMB]<4><5><8><14><17><18>
 [FOCUS0]5
 [FOCUS1]8
 [FOCUS2]1
@@ -429,6 +550,11 @@
 [ALIGN0]0
 [ALIGN1]7
 [ALIGN2]8
+[P_PC]100
+[P_CONSOLE]90
+[P_HANDHELD]80
+[P_PHONE]80
+[P_ARCADE]40
 
 [ID]8
 [NAME EN]Sports Game
@@ -452,7 +578,7 @@
 [NAME CZ]Sportovní
 [DESC CZ]Sportovní fanoušci vyžadují realismus a dobrého počítačového soupeře.<br>Skvělá grafika a zvuk jsou nutností.
 [NAME KO]스포츠 게임
-[DESC KO]Sports fans demand realism and a good computer opponent.<br>Great graphics and sound are a must.
+[DESC KO]스포츠 팬들은 현실같음과 훌륭한 AI 상대를 요구한다.<br>훌륭한 그래픽과 사운드는 필수이다.
 [NAME TU]Spor
 [DESC TU]Spor hayranları gerçekçilik ve iyi bir bilgisayar rakibi ister.<br> Harika grafikler ve ses şarttır.
 [NAME IT]Giochi Sportivi
@@ -461,10 +587,17 @@
 [DESC AR].ﺮﺗﻮﻴﺒﻤﻜﻠﻟ ﺪﻴﺟ ﻢﺼﺧﻭ ﺔﻴﻌﻗﺍﻮﻟﺎﺑ ﺔﺿﺎﻳﺮﻟﺍ قﺎﺸﻋ ﺐﻟﺎﻄﻳ<br>.ﻪﻨﻣ ﺪﺑ ﻻ ﺮﻣﺃ تﻮﺼﻟﺍﻭ ﺔﻌﺋﺍﺮﻟﺍ تﺎﻣﻮﺳﺮﻟﺍ
 [NAME JA]スポーツゲーム
 [DESC JA]スポーツファンは、リアリティと優れたコンピューターの対戦相手を求めています。<br>高品質なグラフィックとサウンドも必須です。
+[NAME UA]Спорт
+[DESC UA]Фани спорту вимагають реалізму та хорошого комп’ютерного суперника.<br>Чудова графіка та звук є обов’язковими.
+[NAME TH]เกมกีฬา
+[DESC TH]แฟนเกมกีฬาต้องการความสมจริงและฝ่ายคอมพิวเตอร์ที่เป็นคู่แข่งเก่ง ๆ<br>กราฟิกกับเสียงประกอบที่ดีเลิศเป็นสิ่งจำเป็น
+[NAME RU]Спорт
+[DESC RU]Любителям спорта нужен реализм и хороший компьютерный оппонент.<br>Обязательны отличная графика и звук.
 [DATE]JAN 1982
 [RES POINTS]800
 [PRICE]70000
 [DEV COSTS]3000
+[SUC YEAR]true
 [PIC]iconSport.png
 [TGROUP]<KID><TEEN><ADULT>
 [GAMEPLAY]20
@@ -483,6 +616,11 @@
 [ALIGN0]7
 [ALIGN1]0
 [ALIGN2]4
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]100
 
 [ID]9
 [NAME EN]Economic Simulation
@@ -490,7 +628,7 @@
 [NAME CH]模拟经营
 [NAME FR]Simulation Economique
 [DESC EN]The goal in this genre is to make money and create an economic empire.<br>This goal is not to be achieved with reflexes,<br>but with a strategic approach.
-[DESC GE]Ziel in diesem Genre ist das Anhäufen von Geld,<br>sowie ein wirtschaftliches Imperium zu erschaffen.<br>Dieses Ziel ist mit strategischem Vorgehen und nicht mit Reflexe zu erreichen.
+[DESC GE]Ziel in diesem Genre ist das Anhäufen von Geld<br>und der Aufbau eines Wirtschaftsimperiums.<br>Dieses Ziel ist mit strategischem Vorgehen und nicht mit Reflexen zu erreichen.
 [DESC CH]这个类型游戏的目标是赚钱，打造一个经济帝国.<br>这个目标不是靠玩家反应来实现的，<br>而是靠商业思维.
 [DESC FR]Le but dans ce genre est de gagner de l'argent et de créer un empire économique.<br>Cet objectif n'est pas à atteindre avec des réflexes,<br>mais avec une approche stratégique.
 [NAME PB]Simulação Econômica
@@ -506,7 +644,7 @@
 [NAME CZ]Ekonomická simulace
 [DESC CZ]Cílem v tomto žánru je vydělat peníze a vytvořit ekonomickou říši.<br>Tohoto cíle nelze dosáhnout pomocí reflexů, ale pomocí strategického přístupu.
 [NAME KO]경제 시뮬레이션
-[DESC KO]The goal in this genre is to make money and create an economic empire.<br>This goal is not to be achieved with reflexes,<br>but with a strategic approach.
+[DESC KO]이 장르의 목표는 돈을 벌고 경제 제국을 만드는 것이다.<br>이 목표는 반사신경으로 달성하는 것이 아니라,<br>전략적 접근으로 달성하는 것이다.
 [NAME TU]Ekonomik Simülasyon
 [DESC TU]Bu türdeki amaç para kazanmak ve bir ekonomik imparatorluk yaratmaktır.<br> Bu hedefe reflekslerle değil, stratejik bir yaklaşımla ulaşılmalıdır.
 [NAME IT]Simulazione economica
@@ -515,6 +653,12 @@
 [DESC AR].ﺔﻳﺩﺎﺼﺘﻗﺍ ﺔﻳﺭﻮﻃﺍﺮﺒﻣﺇ ءﺎﺸﻧﺇﻭ لﺎﻤﻟﺍ ﺐﺴﻛ ﻮﻫ عﻮﻨﻟﺍ اﺬﻫ ﻦﻣ فﺪﻬﻟﺍ<br>، ﻞﻌﻔﻟﺍ دﻭﺩﺭ ﻊﻣ ﻖﻘﺤﺘﻳ ﻻ فﺪﻬﻟﺍ اﺬﻫ<br>.ﻲﺠﻴﺗﺍﺮﺘﺳﺍ ﺞﻬﻧ ﻊﻣ ﻦﻜﻟﻭ
 [NAME JA]経営シミュレーション
 [DESC JA]このジャンルの目標は資金を稼ぎ、自らの帝国を築くことです。<br>この目標は<br>反射神経ではなく、戦略的アプローチによって達成されます。
+[NAME UA]Економічний симулятор
+[DESC UA]Мета в цьому жанрі – заробити грошей та створити економічну імперію.<br>Ця мета досягається не рефлексами,<br>а стратегічним підходом.
+[NAME TH]เกมจำลองสถานการณ์เศรษฐกิจ
+[DESC TH]เป้าหมายของเกมแนวนี้คือการทำเงินและสร้างอาณาจักรเศรษฐกิจให้ได้<br>เป้าหมายนี้ไม่สามารถสำเร็จได้แค่ด้วยการตอบสนอง<br>แต่ยังต้องใช้วิธีเชิงกลยุทธ์อีกด้วย
+[NAME RU]Эконом. симулятор
+[DESC RU]Цель в этом жанре - заработать деньги и создать экономическую империю.<br>Этой цели можно достичь не с помощью рефлексов, а с помощью стратегического подхода.
 [DATE]FEB 1983
 [RES POINTS]900
 [PRICE]80000
@@ -537,6 +681,11 @@
 [ALIGN0]0
 [ALIGN1]2
 [ALIGN2]7
+[P_PC]100
+[P_CONSOLE]70
+[P_HANDHELD]70
+[P_PHONE]70
+[P_ARCADE]30
 
 [ID]10
 [NAME EN]Fighting Game
@@ -560,7 +709,7 @@
 [NAME CZ]Bojová hra
 [DESC CZ]Dobrá grafika a zejména násilí jsou hlavní prvky tohoto žánru. <br> Zde nejsou vyžadovány žádné strategické prvky, pouze reflexy.
 [NAME KO]전투 게임
-[DESC KO]Good graphics and especially violence are the main elements of this genre.<br>No strategic elements are required here, only responsiveness.
+[DESC KO]좋은 그래픽과 특히 폭력이 이 장르의 주요 요소이다.<br>전략적 요소는 필요 없고 대응력만 필요하다.
 [NAME TU]Dövüş
 [DESC TU]İyi grafikler ve özellikle şiddet bu türün ana unsurlarıdır.<br> Burada hiçbir stratejik öğeye gerek yoktur, yalnızca duyarlılık.
 [NAME IT]Picchiaduro
@@ -569,6 +718,12 @@
 [DESC AR].عﻮﻨﻟﺍ اﺬﻬﻟ ﺔﻴﺴﻴﺋﺮﻟﺍ ﺮﺻﺎﻨﻌﻟﺍ ﻲﻫ صﺎﺧ ﻞﻜﺸﺑ ﻒﻨﻌﻟﺍﻭ ةﺪﻴﺠﻟﺍ تﺎﻣﻮﺳﺮﻟﺍ<br>.ﺔﺑﺎﺠﺘﺳﻻﺍ ﻂﻘﻓ ، ﺎﻨﻫ ﺔﺑﻮﻠﻄﻣ ﺔﻴﺠﻴﺗﺍﺮﺘﺳﺍ ﺮﺻﺎﻨﻋ ﺪﺟﻮﺗ ﻻ
 [NAME JA]格闘ゲーム
 [DESC JA]美麗グラフィック、特に暴力性がこのジャンルの主な要素です。<br>戦略的要素は必要ありません。即応性のみが必要です。
+[NAME UA]Файтинг
+[DESC UA]Хороша графіка та відвертість є основними елементами цього жанру.<br>Тут не потрібні стратегічні елементи, лише вправність.
+[NAME TH]เกมต่อสู้
+[DESC TH]กราฟิกที่ดูดีและโดยเฉพาะอย่างยิ่งความรุนแรงจะเป็นองค์ประกอบหลักของเกมแนวนี้<br>ไม่จำเป็นต้องมีองค์ประกอบเชิงกลยุทธ์ในที่แห่งนี้ มีแต่ความไวและฝีมือนี่แหละ
+[NAME RU]Файтинг
+[DESC RU]Хорошая графика и особенно насилие - главные элементы этого жанра.<br>Здесь не требуется никаких стратегических элементов, только хорошее управление.
 [DATE]APR 1984
 [RES POINTS]1000
 [PRICE]90000
@@ -591,6 +746,11 @@
 [ALIGN0]6
 [ALIGN1]9
 [ALIGN2]8
+[P_PC]80
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]90
+[P_ARCADE]100
 
 [ID]11
 [NAME EN]Building Game
@@ -598,7 +758,7 @@
 [NAME CH]模拟建筑
 [NAME FR]Construction
 [DESC EN]The goal in this genre is to build a city, a park or similar.<br>In addition, earning money is the main goal.
-[DESC GE]Ziel in diesem Genre ist der Aufbau einer Stadt, eines Parks oder Ähnliches.<br>Zusätzlich ist das Verdienen von Geld hauptrangig.
+[DESC GE]Ziel in diesem Genre ist der Aufbau einer Stadt, eines Parks oder Ähnliches.<br>Zusätzlich steht das Verdienen von Geld im Vordergrund.
 [DESC CH]这个类型的游戏目标是建造一座城市，公园或类似的建筑物.<br>除了这些，还有挣钱也是主要目标.
 [DESC FR]Le but dans ce genre est de construire une ville, un parc ou similaire.<br>De plus, gagner de l'argent est l'objectif principal.
 [NAME PB]Construção
@@ -614,7 +774,7 @@
 [NAME CZ]Stavební hra
 [DESC CZ]Cílem v tomto žánru je vybudování města, parku apod. <br> Kromě toho je hlavním cílem vydělávání peněz.
 [NAME KO]건축 게임
-[DESC KO]The goal in this genre is to build a city, a park or similar.<br>In addition, earning money is the main goal.
+[DESC KO]이 장르의 목표는 도시, 공원 등을 건설하는 것이다.<br>추가로, 돈을 버는 것이 주된 목표이다.
 [NAME TU]İnşa Etme
 [DESC TU]Bu türdeki amaç bir şehir, park veya benzeri bir şey inşa etmektir.<br> Ayrıca, temel amaç para kazanmaktır.
 [NAME IT]Gioco di costruzione
@@ -623,6 +783,12 @@
 [DESC AR].ﻚﻟﺫ ﻪﺑﺎﺷ ﺎﻣ وﺃ ﺔﻘﻳﺪﺣ وﺃ ﺔﻨﻳﺪﻣ ءﺎﻨﺑ ﻮﻫ عﻮﻨﻟﺍ اﺬﻫ ﻦﻣ فﺪﻬﻟﺍ<br>.ﻲﺴﻴﺋﺮﻟﺍ فﺪﻬﻟﺍ ﻮﻫ لﺎﻤﻟﺍ ﺐﺴﻛ نﺈﻓ ، ﻚﻟﺫ ﻰﻟﺇ ﺔﻓﺎﺿﻹﺎﺑ
 [NAME JA]建設ゲーム
 [DESC JA]このジャンルの目標は、都市や公園などを建設することです。<br>更に、お金を稼ぐことが主な目標です。
+[NAME UA]Будівництво
+[DESC UA]Мета в цьому жанрі – побудувати місто, парк або щось подібне.<br>Крім того, головна ціль – заробити гроші.
+[NAME TH]เกมก่อสร้าง
+[DESC TH]เป้าหมายของเกมแนวนี้คือการสร้างเมือง, สวนสาธารณะ หรือสิ่งต่าง ๆ ในทำนองเดียวกัน<br>นอกจากนี้ การสร้างรายได้จะเป็นเป้าหมายหลัก
+[NAME RU]Строительство
+[DESC RU]Цель в этом жанре - построить город, парк или что-то подобное.<br>Кроме того, основной целью является заработок.
 [DATE]NOV 1988
 [RES POINTS]1100
 [PRICE]100000
@@ -645,6 +811,11 @@
 [ALIGN0]2
 [ALIGN1]4
 [ALIGN2]6
+[P_PC]100
+[P_CONSOLE]80
+[P_HANDHELD]70
+[P_PHONE]70
+[P_ARCADE]30
 
 [ID]12
 [NAME EN]Interactive Movie
@@ -668,7 +839,7 @@
 [NAME CZ]Interaktivní film
 [DESC CZ]Hlavním obsahem tohoto žánru jsou malé hádanky a trochu akce. <br> Vše v atmosféře filmu.
 [NAME KO]영화식 상호작용 게임
-[DESC KO]Small puzzles and some action content are main content for this genre.<br>Everything mixes in a running film.
+[DESC KO]작은 퍼즐과 일부 액션 콘텐츠가 이 장르의 주요 콘텐츠입니다.<br>게임의 모든 것이 한 편의 영화 속에서 진행된다.
 [NAME TU]İnteraktif Film
 [DESC TU]Bu türün ana içeriği küçük bulmacalar ve bazı aksiyon içerikleridir.<br> Her şey bir filmde harmanlanır.
 [NAME IT]Film interattivo
@@ -677,6 +848,12 @@
 [DESC AR].عﻮﻨﻟﺍ اﺬﻬﻟ ﻲﺴﻴﺋﺮﻟﺍ ىﻮﺘﺤﻤﻟﺍ ﺔﻛﺮﺤﻟﺍ ىﻮﺘﺤﻣ ﺾﻌﺑﻭ ةﺮﻴﻐﺼﻟﺍ زﺎﻐﻟﻷﺍ ﺪﻌﺗ<br>.ﻞﻴﻐﺸﺘﻟﺍ ﺪﻴﻗ ﻢﻠﻴﻓ ﻲﻓ ﻂﻠﺘﺨﻳ ءﻲﺷ ﻞﻛ
 [NAME JA]インタラクティブ映像
 [DESC JA]このジャンルのメインは、小さな謎解きと幾つかのアクション要素です。<br>流れる映像にはその全てが混ざり合っています。
+[NAME UA]Інтерактивний фільм
+[DESC UA]Маленькі головоломки та трохи екшену є основним вмістом цього жанру.<br>Все за канонам кіно.
+[NAME TH]เกมภาพยนตร์เชิงตอบโต้
+[DESC TH]ปริศนาเล็กน้อยกับเนื้อหาบางส่วนที่ไปในทางแอคชัน<br>จะเป็นองค์ประกอบหลักของเกมแนวนี้<br>ทุกอย่างจะดำเนินไปในรูปแบบภาพยนตร์
+[NAME RU]Интерактивный фильм
+[DESC RU]Маленькие головоломки и боевик - основное содержание этого жанра.<br>Все смешивается в движущемся фильме.
 [DATE]FEB 1990
 [RES POINTS]1200
 [PRICE]150000
@@ -699,6 +876,11 @@
 [ALIGN0]7
 [ALIGN1]7
 [ALIGN2]3
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]100
 
 [ID]13
 [NAME EN]Real-Time Strategy
@@ -722,7 +904,7 @@
 [NAME CZ]Real-Time Strategie
 [DESC CZ]Rychlá taktická akce proti inteligentnímu protivníkovi a budování základny jsou hlavními prvky tohoto žánru.
 [NAME KO]실시간 전략
-[DESC KO]Fast tactical action against an intelligent opponent and<br>building a base are the main elements of this genre.
+[DESC KO]지능적인 상대에 대한 빠른 전술적 액션과<br>기지 구축이 이 장르의 주요 요소이다.
 [NAME TU]Gerçek Zamanlı Strateji
 [DESC TU]Zeki bir rakibe karşı hızlı taktiksel aksiyon ve bir üs inşa etmek bu türün ana unsurlarıdır.
 [NAME IT]Strategia Tempo Reale
@@ -731,6 +913,12 @@
 [DESC AR]و ﻲﻛﺫ ﻢﺼﺧ ﺪﺿ ﻊﻳﺮﺳ ﻲﻜﻴﺘﻜﺗ ﻞﻤﻋ<br>.عﻮﻨﻟﺍ اﺬﻬﻟ ﺔﻴﺴﻴﺋﺮﻟﺍ ﺮﺻﺎﻨﻌﻟﺍ ﻲﻫ ةﺪﻋﺎﻗ ءﺎﻨﺑ
 [NAME JA]リアルタイム戦略
 [DESC JA]知的な敵を相手にした素早い戦術アクションと、<br>拠点の構築がこのジャンルの主な要素です。
+[NAME UA]Стратегія в реальному часі
+[DESC UA]Основні елементи цього жанру: швидкі тактичні дії<br>проти розумного супротивника та будівництво бази.
+[NAME TH]เกมกลยุทธ์แบบเรียลไทม์
+[DESC TH]การดำเนินการทางยุทธวิธีอย่างรวดเร็วเพื่อสู้กับฝ่ายตรงข้ามที่เก่งกาจ<br>และการสร้างฐานจะเป็นส่วนสำคัญของเกมแนวนี้
+[NAME RU]Стратегия в реал. времени
+[DESC RU]Быстрые тактические действия против умного противника<br>и строительство базы - основные элементы этого жанра.
 [DATE]JUN 1991
 [RES POINTS]1300
 [PRICE]170000
@@ -753,10 +941,15 @@
 [ALIGN0]2
 [ALIGN1]6
 [ALIGN2]7
+[P_PC]100
+[P_CONSOLE]90
+[P_HANDHELD]70
+[P_PHONE]70
+[P_ARCADE]30
 
 [ID]14
 [NAME EN]First-Person Shooter
-[NAME GE]First-Person Shooter
+[NAME GE]First-Person-Shooter
 [NAME CH]第一人称射击
 [NAME FR]Tir a la 1er personne
 [DESC EN]Excessive violence and easy puzzle tasks are<br>the most important gameplay elements of this genre.<br>Fast reactions are absolutely needed here.
@@ -776,7 +969,7 @@
 [NAME CZ]FPS
 [DESC CZ]Nadměrné násilí a snadné logické úkoly jsou nejdůležitější prvky tohoto herního žánru. <br>Rychlé reakce jsou zde absolutní nutností.
 [NAME KO]1인칭 슈팅 게임
-[DESC KO]Excessive violence and easy puzzle tasks are<br>the most important gameplay elements of this genre.<br>Fast reactions are absolutely needed here.
+[DESC KO]과도한 폭력과 쉬운 퍼즐은<br>이 장르의 가장 중요한 게임플레이 요소이다.<br>여기서는 빠른 반응속도가 절대적으로 필요하다.
 [NAME TU]Birinci Şahıs Nişancı
 [DESC TU]Aşırı şiddet ve kolay bulmaca görevleri<br> bu türün en önemli oynanış öğeleridir.<br> Burada kesinlikle hızlı tepkilere ihtiyaç vardır.
 [NAME IT]Sparatutto Prima Persona
@@ -785,6 +978,12 @@
 [DESC AR]ﻞﻬﺴﻟﺍ ﺰﻐﻠﻟﺍ مﺎﻬﻣﻭ طﺮﻔﻤﻟﺍ ﻒﻨﻌﻟﺍ<br>.عﻮﻨﻟﺍ اﺬﻫ ﻲﻓ ﺐﻌﻠﻟﺍ ﺮﺻﺎﻨﻋ ﻢﻫﺃ<br>.ﺎﻨﻫ ﺔﻌﻳﺮﺴﻟﺍ ﻞﻌﻔﻟﺍ دﻭﺩﺮﻟ ﺔﺳﺎﻣ ﺔﺟﺎﺣ كﺎﻨﻫ ﺎﻀﻳﺃ
 [NAME JA]FPS
 [DESC JA]過度な暴力と簡単なパズルが、このジャンルの最重要なプレイ要素です。<br>ここでは素早い反応が絶対に必要です。
+[NAME UA]Шутер від першої особи
+[DESC UA]Надмірна відвертість та легкі головоломки<br>є найважливішими елементами ігроладу цього жанру.<br>Тут точно потрібна швидка реакція.
+[NAME TH]เกมยิงมุมมองบุคคลที่หนึ่ง
+[DESC TH]ความรุนแรงดิบเถื่อนพร้อมกับการไขปริศนาง่าย ๆ<br>คือองค์ประกอบเกมเพลย์ที่สำคัญสำหรับเกมแนวนี้<br>การตอบสนองที่ว่องไวทั้งมือและใจเป็นสิ่งจำเป็นอย่างแน่นอน
+[NAME RU]Шутер от 1-го лица
+[DESC RU]Излишнее насилие и простые головоломки - важнейшие элементы игрового процесса этого жанра.<br>Здесь просто необходима быстрая реакция.
 [DATE]JUL 1991
 [RES POINTS]1400
 [PRICE]200000
@@ -795,7 +994,7 @@
 [GRAPHIC]50
 [SOUND]20
 [CONTROL]20
-[GENRE COMB]<0><2><3><5><6><7><16>
+[GENRE COMB]<0><2><3><5><6><7><16><18>
 [FOCUS0]4
 [FOCUS1]1
 [FOCUS2]7
@@ -807,6 +1006,11 @@
 [ALIGN0]3
 [ALIGN1]9
 [ALIGN2]7
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]90
+[P_PHONE]90
+[P_ARCADE]70
 
 [ID]15
 [NAME EN]Visual Novel
@@ -830,7 +1034,7 @@
 [NAME CZ]Vizuální román
 [DESC CZ]Tento žánr je známý svými promyšlenými příběhy. <br> Zde se soustředíme na neformální hraní a méně akce.
 [NAME KO]비주얼 노벨
-[DESC KO]This genre is known for thoughtful stories.<br>Here the focus is on relaxed gameplay, and less on action.
+[DESC KO]이 장르는 생각에 잠길 수 있는 스토리로 알려져 있다.<br>여기서 초점은 액션보다는 편안한 게임플레이에 맞춰져 있다.
 [NAME TU]Görsel Roman
 [DESC TU]Bu tür, düşünceli hikayeleriyle tanınır.<br> Burada odak noktası rahat oynanış ve aksiyondan daha azdır.
 [NAME IT]Romanzo Visivo
@@ -839,6 +1043,12 @@
 [DESC AR].ﺔﺳﻭﺭﺪﻤﻟﺍ ﺺﺼﻘﻟﺎﺑ فﻭﺮﻌﻣ عﻮﻨﻟﺍ اﺬﻫ<br>.ﺔﻛﺮﺤﻟﺍ ﻰﻠﻋ ﻞﻗﺃ ﺔﺟﺭﺪﺑﻭ ، ﺔﺤﻳﺮﻤﻟﺍ ﺐﻌﻠﻟﺍ ﺔﻘﻳﺮﻃ ﻰﻠﻋ ﺎﻨﻫ ﺰﻴﻛﺮﺘﻟﺍ ﺐﺼﻨﻳ
 [NAME JA]ビジュアルノベル
 [DESC JA]このジャンルは思慮深い物語で知られています。<br>落ち着いたゲームプレイに焦点が当てられ、アクション要素は不要です。
+[NAME UA]Візуальна новела
+[DESC UA]Цей жанр відомий детально продуманими історіями.<br>Тут основна увага приділяється розслабляючому ігровому процесу, а не дії.
+[NAME TH]เกมวิชวลโนเวล
+[DESC TH]เกมแนวนี้ขึ้นชื่อในเรื่องของเรื่องราวที่ให้แง่คิด<br>จุดโฟกัสคือระบบการเล่นที่ผ่อนคลาย และมีแอคชันน้อย
+[NAME RU]Визуальная новелла
+[DESC RU]Этот жанр известен вдумчивыми историями.<br>Здесь упор делается на непринужденный игровой процесс, а не на действия.
 [DATE]JUN 1992
 [RES POINTS]1400
 [PRICE]200000
@@ -861,10 +1071,15 @@
 [ALIGN0]7
 [ALIGN1]4
 [ALIGN2]2
+[P_PC]80
+[P_CONSOLE]80
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]30
 
 [ID]16
 [NAME EN]Third-Person Shooter
-[NAME GE]Third-Person Shooter
+[NAME GE]Third-Person-Shooter
 [NAME CH]第三人称射击
 [NAME FR]Tir a la 3e personne
 [DESC EN]Action paired with tricky jumping and climbing passages<br>are the most important gameplay elements here.<br>Good graphics are demanded by fans.
@@ -884,7 +1099,7 @@
 [NAME CZ]Střílečka z třetí osoby
 [DESC CZ]Akce spojená s obtížnými skoky a pasážemi, kde se budete muset ukázat s dovednostmi jako je: šplhání, lezení, kličkování... <br><br>Fanoušci vyžadují krásnou grafiku.
 [NAME KO]3인칭 슈팅 게임
-[DESC KO]Action paired with tricky jumping and climbing passages<br>are the most important gameplay elements here.<br>Good graphics are demanded by fans.
+[DESC KO]까다로운 점프와 클라이밍 통로가 결합된 액션은<br>이 장르에서 가장 중요한 게임플레이 요소이다.<br>팬들은 좋은 그래픽을 요구한다.
 [NAME TU]Üçüncü Şahıs Nişancı
 [DESC TU]Zor atlama ve tırmanma pasajlarıyla birleştirilmiş aksiyon<br> buradaki en önemli oyun öğeleridir.<br> Hayranlar iyi grafikler talep etmektedir.
 [NAME IT]Sparatutto Terza Persona
@@ -893,6 +1108,12 @@
 [DESC AR]ﻖﻠﺴﺘﻟﺍﻭ ﺰﻔﻘﻠﻟ ﺔﺒﻌﺻ تﺍﺮﻤﻤﺑ ةﺭﺎﺛﻹﺍ نﺮﺘﻘﻳ<br>.ﺎﻨﻫ ﺐﻌﻠﻟﺍ ﺮﺻﺎﻨﻋ ﻢﻫﺃ ﻲﻫ<br>.ةﺪﻴﺟ تﺎﻣﻮﺳﺭ نﻮﺒﺠﻌﻤﻟﺍ ﺐﻠﻄﻳ ﺎﻀﻳﺃ
 [NAME JA]TPS
 [DESC JA]トリッキーなジャンプやクライミングを組み合わせたアクションが、<br>最も重要なゲームプレイ要素です。<br>ファンは優れたグラフィックも求めています。
+[NAME UA]Шутер від третьої особи
+[DESC UA]Екшн, у поєднанні з стрибками та лазанням,<br>є найважливішими елементами ігроладу.<br>Фанам потрібна хороша графіка.
+[NAME TH]เกมยิงมุมมองบุคคลที่สาม
+[DESC TH]ความแอคชันที่จับคู่กับการเคลื่อนที่สุดพริ้วไหว<br>เป็นองค์ประกอบการเล่นที่สำคัญที่สุดในเกมแนวนี้<br>แฟนเกมต้องการให้มีกราฟิกที่ดีงามด้วย
+[NAME RU]Шутер от 3-го лица
+[DESC RU]Действие в сочетании со сложными прыжками и лазанием по проходам - вот самые важные элементы игрового процесса.<br>Фанаты требуют хорошей графики.
 [DATE]AUG 1996
 [RES POINTS]1500
 [PRICE]250000
@@ -903,7 +1124,7 @@
 [GRAPHIC]40
 [SOUND]20
 [CONTROL]20
-[GENRE COMB]<0><2><3><5><6><7><8><10><14>
+[GENRE COMB]<0><2><3><5><6><7><8><10><14><18>
 [FOCUS0]5
 [FOCUS1]2
 [FOCUS2]5
@@ -915,6 +1136,11 @@
 [ALIGN0]4
 [ALIGN1]7
 [ALIGN2]5
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]40
 
 [ID]17
 [NAME EN]Racing
@@ -938,7 +1164,7 @@
 [NAME CZ]Závodní
 [DESC CZ]Fanoušci závodních her vyžadují dobrou ovladatelnost a skvělou grafiku.
 [NAME KO]레이싱 게임
-[DESC KO]Fans of racing games demand good handling and great graphics.
+[DESC KO]레이싱 게임의 팬들은 좋은 핸들링과 훌륭한 그래픽을 요구한다.
 [NAME TU]Yarış
 [DESC TU]Yarış oyunları hayranları iyi bir kullanım ve harika grafikler ister.
 [NAME IT]Racing
@@ -947,6 +1173,12 @@
 [DESC AR].ﺔﻌﺋﺍﺭ تﺎﻣﻮﺳﺭﻭ ةﺪﻴﺟ ﺔﺠﻟﺎﻌﻣ قﺎﺒﺴﻟﺍ بﺎﻌﻟﺃ قﺎﺸﻋ ﺐﻠﻄﺘﻳ
 [NAME JA]レース
 [DESC JA]レースゲームのファンは、優れたハンドリングと美麗なグラフィックを求めています。
+[NAME UA]Гонки
+[DESC UA]Любителі гонок вимагають гарного керування та чудової графіки.
+[NAME TH]เกมแข่งขันความเร็ว
+[DESC TH]แฟนเกมแข่งขันความเร็วต้องการ<br>การควบคุมที่ดีและกราฟิกที่เยี่ยมยอด
+[NAME RU]Гонки
+[DESC RU]Фанаты гоночных игр требуют хорошей управляемости и отличной графики.
 [DATE]JAN 1976
 [RES POINTS]50
 [PRICE]30000
@@ -969,5 +1201,75 @@
 [ALIGN0]8
 [ALIGN1]0
 [ALIGN2]4
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]100
+[P_PHONE]100
+[P_ARCADE]100
+
+[ID]18
+[NAME EN]Survival Game
+[DESC EN]In this type of games, the player's task<br>is to survive in a hostile environment.<br>The main features are crafting items and building a safe base.
+[NAME GE]Survival-Spiel
+[DESC GE]Bei dieser Art von Spielen ist es die Aufgabe des Spielers,<br>in einer lebensfeindlichen Umgebung zu überleben.<br>Hauptfeatures sind das Herstellen von Gegenständen und<br>die Errichtung eines sicheren Stützpunktes.
+[NAME CH]
+[DESC CH]
+[NAME FR]Jeu de Survie
+[DESC FR]Dans ce type de jeux, la tâche du joueur<br>est de survivre dans un environnement hostile.<br>Les principales caractéristiques sont la fabrication d'objets et la construction d'une base sûre.
+[NAME PB]Sobrevivência
+[DESC PB]Nesse tipo de jogo, a tarefa do jogador é<br>sobreviver em um ambiente hostil. As principais<br>características são criar itens e construir uma base segura.
+[NAME HU]
+[DESC HU]
+[NAME CT]求生遊戲
+[DESC CT]玩家在這類遊戲要在不友善的環境生存，<br>製作物品和建立安全住所是遊戲特點。
+[NAME ES]Juego de supervivencia
+[DESC ES]En este tipo de juegos, la tarea del jugador<br>es sobrevivir en un ambiente hostil.<br>Las características principales son la elaboración de artículos y la construcción de una base segura.
+[NAME PL]Gra Survival
+[DESC PL]W tego typu grach zadaniem gracza<br>jest przetrwanie w nieprzyjaznym środowisku.<br>Główne cechy to crafting przedmiotów i budowanie bezpiecznej bazy.
+[NAME CZ]Hra o přežití
+[DESC CZ]V tomto typu her je úkolem hráče<br> přežít v nepřátelském prostředí.<br>Hlavními funkcemi jsou výroba předmětů a budování bezpečné základny.
+[NAME KO]서바이벌 게임
+[DESC KO]이런 종류의 게임에서 플레이어의 임무는<br>적대적인 환경에서 살아남는 것이다.<br>아이템 제작과 안전한 기지 구축이 주요 특징이다.
+[NAME TU]Hayatta Kalma
+[DESC TU]Bu tür oyunlarda oyuncunun görevi,<br>doğada hayatta kalmaktır.<br>Genellikle eşya ve güvenli ev yapımı üzerine kurulmuştur.
+[NAME IT]
+[DESC IT]
+[NAME AR]
+[DESC AR]
+[NAME JA]サバイバルゲーム
+[DESC JA]プレイヤーの目的は、過酷な環境で生き残ることです。<br>アイテム作成と、安全な拠点の構築が主軸になります。
+[NAME UA]
+[DESC UA]
+[NAME TH]เกมเอาชีวิตรอด
+[DESC TH]ในเกมแนวนี้ ภารกิจของผู้เล่น<br>คือการเอาชีวิตรอดในสภาพแวดรอบที่ไม่เป็นมิตร<br>ฟีเจอร์หลักคือการประดิษฐ์ไอเท็มใช้เองและสร้างฐานที่ปลอดภัย
+[NAME RU]Игра на выживание
+[DESC RU]В играх этого типа задача игрока<br> состоит в том, чтобы выжить во враждебной среде.<br>Главные особенности — создание предметов и строительство базы.
+[DATE]APR 1986
+[RES POINTS]1000
+[PRICE]90000
+[DEV COSTS]3000
+[PIC]iconSurvival.png
+[TGROUP]<TEEN><ADULT><OLD>
+[GAMEPLAY]30
+[GRAPHIC]30
+[SOUND]10
+[CONTROL]30
+[GENRE COMB]<3><4><5><6><14><16>
+[FOCUS0]10
+[FOCUS1]7
+[FOCUS2]2
+[FOCUS3]9
+[FOCUS4]1
+[FOCUS5]2
+[FOCUS6]7
+[FOCUS7]2
+[ALIGN0]2
+[ALIGN1]7
+[ALIGN2]8
+[P_PC]100
+[P_CONSOLE]100
+[P_HANDHELD]80
+[P_PHONE]80
+[P_ARCADE]30
 
 [EOF]

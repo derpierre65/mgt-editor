@@ -23,6 +23,9 @@ function getList(list) {
 // get the genres
 let genre = {};
 for (const line of genreLines) {
+	if ( line.startsWith('//') ) {
+		continue;
+	}
 	if (line.startsWith('[ID]') || line.startsWith('[EOF]')) {
 		if (genre.ID) {
 			genres[genre.ID] = genre;

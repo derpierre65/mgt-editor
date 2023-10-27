@@ -185,7 +185,7 @@ export default {
 			for (const topic of genres[this.genre].themes) {
 				topics.push({
 					key: topic,
-					value: this.topics[topic]['NAME EN'],
+					value: this.topics[topic],
 				});
 			}
 

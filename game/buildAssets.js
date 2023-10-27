@@ -1,12 +1,15 @@
 const fs = require('fs');
 
-const genreLines = fs.readFileSync(__dirname + '/data/Genres.txt').toString().split('\n');
-const themeLinesGE = fs.readFileSync(__dirname + '/data/Themes_GE.txt').toString().split('\n');
-const themeLinesEN = fs.readFileSync(__dirname + '/data/Themes_EN.txt').toString().split('\n');
-const combinationLines = fs.readFileSync(__dirname + '/genreCombination.txt').toString().split('\n');
 const genres = {};
 const themes = [];
 const combinations = {};
+let genreLines = fs.readFileSync(__dirname + '/data/Genres.txt').toString().split('\n');
+let themeLinesEN = fs.readFileSync(__dirname + '/data/Themes_EN.txt').toString().split('\n');
+let combinationLines = fs.readFileSync(__dirname + '/genreCombination.txt').toString().split('\n');
+
+genreLines = genreLines.filter((value) => !value.startsWith('//'));
+themeLinesEN = themeLinesEN.filter((value) => !value.startsWith('//'));
+combinationLines = combinationLines.filter((value) => !value.startsWith('//'));
 
 function getList(list) {
 	const array = [];
@@ -23,9 +26,6 @@ function getList(list) {
 // get the genres
 let genre = {};
 for (const line of genreLines) {
-	if ( line.startsWith('//') ) {
-		continue;
-	}
 	if (line.startsWith('[ID]') || line.startsWith('[EOF]')) {
 		if (genre.ID) {
 			genres[genre.ID] = genre;
@@ -53,12 +53,9 @@ for (const line of genreLines) {
 	}
 }
 
-for (const [key, line] of themeLinesGE.entries()) {
+for (const [key, line] of themeLinesEN.entries()) {
 	const match = line.match(/([a-zA-Zäöüß\- ]+)(.+)/);
-	const themeIndex = themes.push({
-		'NAME GE': match[1],
-		'NAME EN': themeLinesEN[key],
-	}) - 1;
+	const themeIndex = themes.push(match[1].trim()) - 1;
 
 	for (let genre of getList(match[2])) {
 		if (!genres[genre]) {

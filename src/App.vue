@@ -16,7 +16,7 @@
 
             <select v-model.number="genre" class="w-full border border-black">
               <option :value="-1">Select Genre</option>
-              <option v-for="gen of genres" :value="gen.ID">{{ gen[genreNameKey] }}</option>
+              <option v-for="gen of genres" :value="gen.ID">{{ gen[genreNameKey] || gen[genreFallbackKey] }}</option>
             </select>
           </div>
           <div class="w-64">
@@ -26,7 +26,7 @@
 
             <select v-model.number="subGenre" :disabled="genre === -1" class="w-full border border-black">
               <option :value="-1">Nothing</option>
-              <option v-for="gen of subGenres" :value="genres[gen].ID">{{ genres[gen][genreNameKey] }}</option>
+              <option v-for="gen of subGenres" :value="genres[gen].ID">{{ genres[gen][genreNameKey] || gen[genreFallbackKey] }}</option>
             </select>
           </div>
         </div>
@@ -165,8 +165,9 @@ export default {
       if (locale === 'GE') realLocale = 'DE';
       if (locale === 'EN') realLocale = 'US';
       if (locale === 'TU') realLocale = 'TR';
-      if (locale === 'CT') realLocale = 'ZH';
       if (locale === 'PB') realLocale = 'PT';
+      if (locale === 'CT') realLocale = 'ZH'; // chinese traditional
+      if (locale === 'CH') realLocale = 'ZH'; // chinese simplified
 
       return {
         locale,
@@ -178,6 +179,7 @@ export default {
       genres,
       topics,
       locales,
+      genreFallbackKey: 'NAME EN',
       locale: 'ES',
       genre: -1,
       subGenre: -1,

@@ -26,7 +26,7 @@
 
             <select v-model.number="subGenre" :disabled="genre === -1" class="w-full border border-black">
               <option :value="-1">Nothing</option>
-              <option v-for="gen of subGenres" :value="genres[gen].ID">{{ genres[gen][genreNameKey] || gen[genreFallbackKey] }}</option>
+              <option v-for="gen of subGenres" :value="genres[gen].ID">{{ genres[gen][genreNameKey] || genres[gen][genreFallbackKey] }}</option>
             </select>
           </div>
         </div>

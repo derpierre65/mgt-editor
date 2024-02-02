@@ -2,7 +2,7 @@
   <div class="relative container mx-auto mt-4">
     <div class="absolute top-0 right-0 text-white flex flex-col justify-items-end gap-2">
       <div v-for="language in locales" class="text-right">
-        <img :src="`https://flagpedia.net/data/flags/h24/${language.realLocale}.webp`" class="ml-auto cursor-pointer" @click="locale = language.locale" :alt="language.realLocale" />
+        <img :src="`https://flagpedia.net/data/flags/h24/${language.realLocale}.webp`" class="ml-auto cursor-pointer" @click="updateLocale(language)" :alt="language.realLocale" />
       </div>
     </div>
 
@@ -180,7 +180,7 @@ export default {
       topics,
       locales,
       genreFallbackKey: 'NAME EN',
-      locale: 'ES',
+      locale: window.localStorage && window.localStorage.getItem('latest_locale') || 'EN',
       genre: -1,
       subGenre: -1,
       topic: -1,
@@ -235,6 +235,10 @@ export default {
       this.subGenre = -1;
       this.topic = -1;
       this.subTopic = -1;
+    },
+    updateLocale(language) {
+      this.locale = language.locale;
+      window.localStorage && window.localStorage.setItem('latest_locale', this.locale);
     },
     generateGame() {
       this.focus = this.getFocus(this.genre, this.subGenre);
